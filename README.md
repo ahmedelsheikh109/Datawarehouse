@@ -1,117 +1,96 @@
+# Modern SQL Data Warehouse & Analytics
 
-# Data Warehouse and Analytics Project
+Welcome to the **Modern SQL Data Warehouse & Analytics** project! 🚀
 
-Welcome to the **Data Warehouse and Analytics Project** repository! 🚀  
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
-
----
-## 🏗️ Data Architecture
-
-The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
-![Data Architecture](docs/data_architecture.png)
-
-1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
-2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
-3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
-
----
-## 📖 Project Overview
-
-This project involves:
-
-1. **Data Architecture**: Designing a Modern Data Warehouse Using Medallion Architecture **Bronze**, **Silver**, and **Gold** layers.
-2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems into the warehouse.
-3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
-4. **Analytics & Reporting**: Creating SQL-based reports and dashboards for actionable insights.
-
-🎯 This repository is an excellent resource for professionals and students looking to showcase expertise in:
-- SQL Development
-- Data Architect
-- Data Engineering  
-- ETL Pipeline Developer  
-- Data Modeling  
-- Data Analytics  
+This repository contains an end-to-end data engineering and analytics solution. It demonstrates the design and implementation of a robust data warehouse using the **Medallion Architecture**, taking raw data from disparate sources, transforming it into a clean, structured format, and finally modeling it for business intelligence and reporting.
 
 ---
 
-## 🛠️ Important Links & Tools:
+## 🎯 Project Overview
 
-Everything is for Free!
-- **[Datasets](datasets/):** Access to the project dataset (csv files).
-- **[SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads):** Lightweight server for hosting your SQL database.
-- **[SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16):** GUI for managing and interacting with databases.
-- **[Git Repository](https://github.com/):** Set up a GitHub account and repository to manage, version, and collaborate on your code efficiently.
-- **[DrawIO](https://www.drawio.com/):** Design data architecture, models, flows, and diagrams.
-- **[Notion](https://www.notion.com/):** All-in-one tool for project management and organization.
-- **[Notion Project Steps](https://thankful-pangolin-2ca.notion.site/SQL-Data-Warehouse-Project-16ed041640ef80489667cfe2f380b269?pvs=4):** Access to All Project Phases and Tasks.
+The primary goal of this project is to consolidate sales data from both an ERP system and a CRM system into a single, unified data model. By resolving data quality issues and applying a structured architecture, the project provides an optimized environment for generating analytical insights.
 
----
-
-## 🚀 Project Requirements
-
-### Building the Data Warehouse (Data Engineering)
-
-#### Objective
-Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
-
-#### Specifications
-- **Data Sources**: Import data from two source systems (ERP and CRM) provided as CSV files.
-- **Data Quality**: Cleanse and resolve data quality issues prior to analysis.
-- **Integration**: Combine both sources into a single, user-friendly data model designed for analytical queries.
-- **Scope**: Focus on the latest dataset only; historization of data is not required.
-- **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
+**Key Highlights:**
+- **ETL Pipeline:** Robust Extraction, Transformation, and Loading of data using SQL.
+- **Medallion Architecture:** Implementation of Bronze, Silver, and Gold data layers.
+- **Data Modeling:** Creation of a Star Schema (Fact and Dimension tables) optimized for fast querying.
+- **Actionable Analytics:** SQL-driven insights focusing on customer behavior, product performance, and sales trends.
 
 ---
 
-### BI: Analytics & Reporting (Data Analysis)
+## 🏗️ Architecture Design
 
-#### Objective
-Develop SQL-based analytics to deliver detailed insights into:
-- **Customer Behavior**
-- **Product Performance**
-- **Sales Trends**
+This project adopts the Medallion Architecture to progressively enrich and improve data quality:
 
-These insights empower stakeholders with key business metrics, enabling strategic decision-making.  
+1. **🥉 Bronze Layer (Raw Data):** 
+   - Acts as the landing zone for raw data ingested from source systems (ERP and CRM CSV files) directly into the SQL Server database. No transformations are applied at this stage.
 
-For more details, refer to [docs/requirements.md](docs/requirements.md).
+2. **🥈 Silver Layer (Cleansed & Conformed):** 
+   - Data is cleansed, standardized, and normalized. This layer resolves data quality issues, handles missing values, and ensures data consistency across the pipeline.
+
+3. **🥇 Gold Layer (Business-Ready):** 
+   - The final layer where data is modeled into a highly optimized Star Schema. This layer is specifically designed to support reporting tools, BI dashboards, and complex analytical queries.
+
+*(Please refer to the `docs/` folder for detailed architecture diagrams, data flow designs, and data catalogs).*
+
+---
+
+## 🛠️ Technology Stack
+
+- **Database Engine:** SQL Server
+- **Development Tool:** SQL Server Management Studio (SSMS)
+- **Data Processing:** T-SQL (Stored Procedures, Views, DDL/DML)
+- **Modeling & Architecture Design:** Draw.io
+- **Version Control:** Git & GitHub
+
+---
 
 ## 📂 Repository Structure
+
+```text
+├── datasets/             # Source data files (ERP & CRM exports)
+├── docs/                 # Documentation, data dictionaries, and diagrams
+├── scripts/              
+│   ├── bronze/           # DDL and load procedures for the Bronze layer
+│   ├── silver/           # DDL and transformation procedures for the Silver layer
+│   ├── gold/             # DDL and Star Schema definitions for the Gold layer
+│   └── init_database.sql # Database initialization script
+├── tests/                # SQL scripts for data quality and integrity checks
+├── README.md             # Project documentation
+└── .gitignore            # Git ignore configurations
 ```
-data-warehouse-project/
-│
-├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
-│
-├── docs/                               # Project documentation and architecture details
-│   ├── etl.drawio                      # Draw.io file shows all different techniquies and methods of ETL
-│   ├── data_architecture.drawio        # Draw.io file shows the project's architecture
-│   ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
-│   ├── data_flow.drawio                # Draw.io file for the data flow diagram
-│   ├── data_models.drawio              # Draw.io file for data models (star schema)
-│   ├── naming-conventions.md           # Consistent naming guidelines for tables, columns, and files
-│
-├── scripts/                            # SQL scripts for ETL and transformations
-│   ├── bronze/                         # Scripts for extracting and loading raw data
-│   ├── silver/                         # Scripts for cleaning and transforming data
-│   ├── gold/                           # Scripts for creating analytical models
-│
-├── tests/                              # Test scripts and quality files
-│
-├── README.md                           # Project overview and instructions
-├── LICENSE                             # License information for the repository
-├── .gitignore                          # Files and directories to be ignored by Git
-└── requirements.txt                    # Dependencies and requirements for the project
-```
+
 ---
 
+## 🚀 Getting Started
 
-## 🛡️ License
+To run this project locally and build the data warehouse:
 
-This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/ahmedelsheikh109/Datawarehouse.git
+   ```
 
-## 🌟 About Me
+2. **Initialize the Database:**
+   - Open SQL Server Management Studio (SSMS).
+   - Execute the `scripts/init_database.sql` script to create the database and required schemas.
 
-Hi there! I'm **Ahmed Elsheikh**. I’m a passionate Data Engineer and Analyst on a mission to build impactful data solutions and share my knowledge!
+3. **Execute the ETL Pipelines:**
+   - **Bronze Layer:** Run the scripts in the `scripts/bronze/` folder to build tables and load the raw CSV data.
+   - **Silver Layer:** Run the scripts in the `scripts/silver/` folder to clean and transform the data.
+   - **Gold Layer:** Run the scripts in the `scripts/gold/` folder to assemble the final Star Schema model.
 
-Let's stay in touch! Feel free to connect with me on the following platforms:
+4. **Validate Data (Optional):**
+   - Use the testing scripts located in the `tests/` directory to ensure data integrity across the Silver and Gold layers.
 
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ahmedelsheikh109)
+---
+
+## 👨‍💻 About the Author
+
+**Ahmed Elsheikh**  
+*Data Engineer & Analyst*
+
+I am passionate about building scalable data architectures, optimizing ETL pipelines, and translating raw data into actionable business insights. 
+
+📫 **Let's Connect:**
+- [GitHub Profile](https://github.com/ahmedelsheikh109)
