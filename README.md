@@ -20,7 +20,7 @@ The primary goal of this project is to consolidate sales data from both an ERP s
 
 ## 🏗️ Architecture Design
 
-![Data Architecture](docs/data_architecture_clean.png)
+![Data Architecture](docs/data_architecture_clean_v2.png)
 
 This project adopts the Medallion Architecture to progressively enrich and improve data quality:
 
