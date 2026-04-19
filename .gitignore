@@ -1,0 +1,36 @@
+# SQL Server Database Files
+*.mdf
+*.ldf
+*.ndf
+*.bak
+*.trn
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.dbmdl
+*.jfm
+
+# Python / Scripts Environments
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.env
+
+# Large datasets or logs
+*.log
