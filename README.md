@@ -20,8 +20,6 @@ The primary goal of this project is to consolidate sales data from both an ERP s
 
 ## 🏗️ Architecture Design
 
-![Data Architecture](docs/data_architecture_clean_v2.png)
-
 This project adopts the Medallion Architecture to progressively enrich and improve data quality:
 
 1. **🥉 Bronze Layer (Raw Data):** 
@@ -32,8 +30,6 @@ This project adopts the Medallion Architecture to progressively enrich and impro
 
 3. **🥇 Gold Layer (Business-Ready):** 
    - The final layer where data is modeled into a highly optimized Star Schema. This layer is specifically designed to support reporting tools, BI dashboards, and complex analytical queries.
-
-*(Please refer to the `docs/` folder for detailed architecture diagrams, data flow designs, and data catalogs).*
 
 ---
 
